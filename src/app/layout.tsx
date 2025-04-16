@@ -4,6 +4,7 @@ import "./globals.css";
 
 const vazir = Vazirmatn({
   variable: "--font-vazir",
+  subsets: ["arabic"],
 });
 
 export const metadata: Metadata = {

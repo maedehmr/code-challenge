@@ -2,8 +2,9 @@ import Image from "next/image";
 import styles from "./comment-section.module.css";
 import { commentStatus } from "@/constant/commentStatus";
 import { IconsStatus } from "@/ts/enums/iconsStatus";
+import { Comments } from "@/ts/types/comments";
 
-const comments = [
+const comments: Comments[] = [
   {
     id: 1,
     avatar: "/images/avatar1.jpg",
