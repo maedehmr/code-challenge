@@ -1,8 +1,7 @@
 import Image from "next/image";
 import styles from "./comment-section.module.css";
 import { commentStatus } from "@/constant/commentStatus";
-import { IconsStatus } from "@/ts/enums/iconsStatus";
-import { Comments } from "@/ts/types/comments";
+import { Comments } from "@/types/comments";
 
 const comments: Comments[] = [
   {
@@ -12,7 +11,6 @@ const comments: Comments[] = [
     status: commentStatus.pending,
     title: "تجربه من:",
     text: "همه چیز خیلی خوب پیش رفت",
-    icon: IconsStatus.BOTH,
   },
   {
     id: 2,
@@ -21,7 +19,6 @@ const comments: Comments[] = [
     status: commentStatus.approved,
     title: "تجربه من:",
     text: "همه چیز خیلی خوب پیش رفت",
-    icon: IconsStatus.TRASH,
   },
   {
     id: 3,
@@ -30,7 +27,6 @@ const comments: Comments[] = [
     status: commentStatus.rejected,
     title: "تجربه من:",
     text: "همه چیز خیلی خوب پیش رفت",
-    icon: IconsStatus.NONE,
   },
   {
     id: 4,
@@ -39,7 +35,6 @@ const comments: Comments[] = [
     status: commentStatus.approved,
     title: "تجربه من:",
     text: "همه چیز خیلی خوب پیش رفت",
-    icon: IconsStatus.TRASH,
   },
   {
     id: 5,
@@ -48,7 +43,6 @@ const comments: Comments[] = [
     status: commentStatus.approved,
     title: "تجربه من:",
     text: "همه چیز خیلی خوب پیش رفت",
-    icon: IconsStatus.TRASH,
   },
   {
     id: 6,
@@ -57,7 +51,6 @@ const comments: Comments[] = [
     status: commentStatus.approved,
     title: "تجربه من:",
     text: "همه چیز خیلی خوب پیش رفت",
-    icon: IconsStatus.TRASH,
   },
 ];
 
@@ -85,7 +78,7 @@ const CommentSection = () => {
           <small>{comment.text}</small>
         </div>
         <div className={styles.icons}>
-          {comment.icon === IconsStatus.BOTH ? (
+          {comment.status === commentStatus.pending ? (
             <>
               <Image src="/icons/edit.svg" width={24} height={24} alt="edit" />
               <Image
@@ -95,10 +88,8 @@ const CommentSection = () => {
                 alt="trash"
               />
             </>
-          ) : comment.icon === IconsStatus.TRASH ? (
+          ) : comment.status === commentStatus.approved ? (
             <Image src="/icons/trash.svg" width={24} height={24} alt="trash" />
-          ) : comment.icon === IconsStatus.EDIT ? (
-            <Image src="/icons/edit.svg" width={24} height={24} alt="edit" />
           ) : null}
         </div>
       </div>

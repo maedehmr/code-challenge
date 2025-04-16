@@ -1,5 +1,4 @@
 import { commentStatus } from "@/constant/commentStatus";
-import { IconsStatus } from "../enums/iconsStatus";
 
 export interface Comments {
   id: number;
@@ -8,5 +7,4 @@ export interface Comments {
   status: (typeof commentStatus)[keyof typeof commentStatus];
   title: string;
   text: string;
-  icon: IconsStatus;
 }
