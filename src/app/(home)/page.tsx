@@ -8,8 +8,8 @@ export default function Home() {
       <div className={styles.title}>
         <Image src="/icons/comment.svg" width={24} height={24} alt="comment" />
         <h3>نظرات من</h3>
-        <CommentSection />
       </div>
+      <CommentSection />
     </main>
   );
 }
